@@ -217,3 +217,18 @@ footer {
     font-size: 18px;
   }
 }
+/* Service card hover effect */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode hover shadow */
+.dark-mode .card:hover {
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+}
+
