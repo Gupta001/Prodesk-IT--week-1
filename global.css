@@ -5,16 +5,14 @@
   font-family: Arial, sans-serif;
 }
 
-/* Light Mode */
 body {
   padding: 25px;
   background-color: white;
   color: black;
-  font-size: 18px;
+  font-size: 20px;
   transition: background-color 0.3s, color 0.3s;
-}
+} 
 
-/* Dark Mode */
 .dark-mode {
   background-color: black;
   color: white;
@@ -47,14 +45,29 @@ body {
 .nav-links a {
   text-decoration: none;
   color: inherit;
-  font-weight: 500;
 }
 
-/* Theme button */
-#themeToggle {
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
   cursor: pointer;
-  padding: 6px 10px;
-  font-size: 16px;
+}
+
+/* Dark Mode Button */
+.theme-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  z-index: 999;
 }
 
 /* Hero */
@@ -68,30 +81,24 @@ body {
 }
 
 .hero h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
+  font-size: 48px;
+  margin-bottom: 12px;
+} 
 
 .hero p {
   max-width: 600px;
-  margin-bottom: 20px;
-}
+  margin-bottom: 24px;
+  font-size: 20px;
+} 
 
-/* Button hover */
 .btn {
   padding: 12px 30px;
   border: none;
   background: #007bff;
   color: white;
-  font-size: 16px;
   cursor: pointer;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.btn:hover {
-  background: #0056b3;
-  transform: scale(1.05);
-}
+  font-size: 18px;
+} 
 
 /* Services */
 .services {
@@ -103,7 +110,6 @@ body {
   display: flex;
   gap: 20px;
   justify-content: center;
-  margin-top: 30px;
   flex-wrap: wrap;
 }
 
@@ -112,38 +118,102 @@ body {
   padding: 25px;
   width: 250px;
   border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 18px;
+} 
+
+/* Dark mode cards */
+.dark-mode .card {
+  background: #1e1e1e;
+  color: white;
 }
 
-/* Card hover */
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* Footer */
 footer {
   padding: 20px;
   text-align: center;
   background: #f4f4f4;
 }
 
-/* Responsive */
+.dark-mode footer {
+  background: #1e1e1e;
+}
+
+/* 📱 Mobile */
 @media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 1001;
+    font-size: 26px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 8px 10px;
+    border-radius: 6px;
+  }
+
   .nav-links {
+    display: none;
     flex-direction: column;
     gap: 10px;
+    margin-top: 60px;
+    position: fixed;
+    top: 54px;
+    right: 14px;
+    background: rgba(255,255,255,0.95);
+    padding: 12px;
+    border-radius: 8px;
+    width: calc(100% - 28px);
+    max-width: 320px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    z-index: 1000;
   }
-}
 
-.dark-mode .card {
-  background-color: #1e1e1e;
-  color: white;
-  border: 1px solid #333;
-}
+  .dark-mode .nav-links {
+    background: rgba(30,30,30,0.95);
+    color: white;
+  }
 
-/* Dark mode footer fix */
-.dark-mode footer {
-  background-color: #1e1e1e;
-  color: white;
+  .nav-links a {
+    display: block;
+    padding: 8px 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Make hero height flexible on mobile to avoid large gaps */
+  .hero {
+    height: auto;
+    padding: 40px 10px;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    max-width: 100%;
+    margin-bottom: 12px;
+    padding: 0 10px;
+  }
+
+  /* Reduce spacing for services section */
+  .services {
+    padding: 30px 10px;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 12px;
+    font-size: 18px;
+  }
 }
