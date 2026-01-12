@@ -13,10 +13,12 @@
   <header class="navbar">
     <div class="logo">Prodesk IT</div>
 
-    <!-- Hamburger -->
-    <div class="menu-toggle" id="menuToggle">☰</div>
+    <!-- Accessible Hamburger Button -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+      ☰
+    </button>
 
-    <nav>
+    <nav aria-label="Primary navigation">
       <ul class="nav-links" id="navLinks">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
@@ -27,39 +29,46 @@
   </header>
 
   <!-- Dark Mode Button -->
-  <button id="themeToggle" class="theme-btn">🌙</button>
+  <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">
+    🌙
+  </button>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>We Build Digital Experiences</h1>
-    <p>Helping brands grow through modern web and digital solutions.</p>
-    <button class="btn">Get Started</button>
-  </section>
+  <!-- ✅ MAIN LANDMARK (CRITICAL FIX) -->
+  <main>
 
-  <!-- Services -->
-  <section class="services">
-    <h2>Our Services</h2>
-    <div class="service-container">
-      <div class="card">
-        <h3>SEO Optimization</h3>
-        <p>Improve your website ranking and visibility.</p>
+    <!-- Hero -->
+    <section class="hero">
+      <h1>We Build Digital Experiences</h1>
+      <p>Helping brands grow through modern web and digital solutions.</p>
+      <button class="btn">Get Started</button>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+      <h2>Our Services</h2>
+      <div class="service-container">
+        <div class="card">
+          <h3>SEO Optimization</h3>
+          <p>Improve your website ranking and visibility.</p>
+        </div>
+        <div class="card">
+          <h3>Web Development</h3>
+          <p>Responsive and modern websites for your business.</p>
+        </div>
+        <div class="card">
+          <h3>Digital Marketing</h3>
+          <p>Grow your audience and boost conversions.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Web Development</h3>
-        <p>Responsive and modern websites for your business.</p>
-      </div>
-      <div class="card">
-        <h3>Digital Marketing</h3>
-        <p>Grow your audience and boost conversions.</p>
-      </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
 
   <!-- Footer -->
   <footer>
     <p>© 2026 Prodesk IT. All rights reserved.</p>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
