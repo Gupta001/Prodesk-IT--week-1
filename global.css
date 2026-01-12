@@ -7,18 +7,17 @@
 
 body {
   padding: 25px;
-  background-color: white;
-  color: black;
+  background-color: #ffffff;
+  color: #000000;
   font-size: 20px;
   transition: background-color 0.3s, color 0.3s;
-} 
-
-.dark-mode {
-  background-color: black;
-  color: white;
 }
 
-/* Navbar */
+.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
 .navbar {
   position: sticky;
   top: 0;
@@ -27,7 +26,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
   z-index: 100;
 }
 
@@ -45,16 +44,26 @@ body {
 .nav-links a {
   text-decoration: none;
   color: inherit;
+  font-weight: 500;
 }
 
-/* Hamburger */
 .menu-toggle {
   display: none;
   font-size: 26px;
   cursor: pointer;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
 }
 
-/* Dark Mode Button */
+button:focus,
+a:focus {
+  outline: 3px solid #0056d2;
+  outline-offset: 3px;
+}
+
 .theme-btn {
   position: fixed;
   bottom: 20px;
@@ -65,12 +74,11 @@ body {
   border: none;
   font-size: 22px;
   cursor: pointer;
-  background: #007bff;
-  color: white;
+  background: #0056d2;
+  color: #fff;
   z-index: 999;
 }
 
-/* Hero */
 .hero {
   height: 90vh;
   display: flex;
@@ -83,27 +91,50 @@ body {
 .hero h1 {
   font-size: 48px;
   margin-bottom: 12px;
-} 
+}
 
 .hero p {
   max-width: 600px;
   margin-bottom: 24px;
   font-size: 20px;
-} 
+}
 
 .btn {
   padding: 12px 30px;
   border: none;
-  background: #007bff;
-  color: white;
+  background: #0056d2;
+  color: #ffffff;
   cursor: pointer;
   font-size: 18px;
-} 
+  border-radius: 6px;
+  transition: background-color 0.3s ease,
+              transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
 
-/* Services */
+.btn:hover {
+  background-color: #003f9a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.btn:focus {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
 .services {
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
+}
+
+.services h2 {
+  margin-bottom: 40px;
 }
 
 .service-container {
@@ -119,12 +150,21 @@ body {
   width: 250px;
   border-radius: 8px;
   font-size: 18px;
-} 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-/* Dark mode cards */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
 .dark-mode .card {
   background: #1e1e1e;
-  color: white;
+  color: #ffffff;
+}
+
+.dark-mode .card:hover {
+  box-shadow: 0 10px 25px rgba(255,255,255,0.15);
 }
 
 footer {
@@ -137,8 +177,8 @@ footer {
   background: #1e1e1e;
 }
 
-/* 📱 Mobile */
 @media (max-width: 768px) {
+
   body {
     font-size: 16px;
     padding: 10px;
@@ -150,11 +190,6 @@ footer {
     top: 14px;
     right: 14px;
     z-index: 1001;
-    font-size: 26px;
-    background: rgba(0,0,0,0.6);
-    color: white;
-    padding: 8px 10px;
-    border-radius: 6px;
   }
 
   .nav-links {
@@ -165,70 +200,26 @@ footer {
     position: fixed;
     top: 54px;
     right: 14px;
-    background: rgba(255,255,255,0.95);
+    background: #ffffff;
     padding: 12px;
     border-radius: 8px;
     width: calc(100% - 28px);
     max-width: 320px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     z-index: 1000;
   }
 
   .dark-mode .nav-links {
-    background: rgba(30,30,30,0.95);
-    color: white;
-  }
-
-  .nav-links a {
-    display: block;
-    padding: 8px 10px;
+    background: #1e1e1e;
+    color: #ffffff;
   }
 
   .nav-links.active {
     display: flex;
   }
 
-  /* Make hero height flexible on mobile to avoid large gaps */
   .hero {
     height: auto;
     padding: 40px 10px;
-    align-items: center;
-  }
-
-  .hero h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-  }
-
-  .hero p {
-    max-width: 100%;
-    margin-bottom: 12px;
-    padding: 0 10px;
-  }
-
-  /* Reduce spacing for services section */
-  .services {
-    padding: 30px 10px;
-  }
-
-  .card {
-    width: 100%;
-    margin-bottom: 12px;
-    font-size: 18px;
   }
 }
-/* Service card hover effect */
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Dark mode hover shadow */
-.dark-mode .card:hover {
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
-}
-
