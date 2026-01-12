@@ -46,8 +46,11 @@ It also includes a **Light Mode / Dark Mode toggle** feature implemented using J
 - Mobile-friendly design  
 
 ---
+##  🖼️ Screenshots
+
 <img width="1865" height="893" alt="image" src="https://github.com/user-attachments/assets/e5597ec7-9199-49cf-ae0a-07a60f77e436" />
 <img width="1897" height="962" alt="Screenshot 2026-01-12 174424" src="https://github.com/user-attachments/assets/1b867e68-01c2-4700-8f12-3eb237d4b0d8" />
+
 
 
 
